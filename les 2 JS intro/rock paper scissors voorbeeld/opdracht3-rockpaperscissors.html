@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper Scissors</title>
+    <!--Extra meta tags plaatsen-->
+    <meta name="description" content="Opdracht 3: Simpele versie van Rock Paper Scissors">
+    <meta name="keywords" content="HTML, CSS en JS">
+    <meta name="author" content="Maurice Dibbets">
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+
+    <!--Start main-->
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="game-wrapper">
+                    <h2 class="text-white">Make your move</h2>
+                    <div class="player-vs-pc-flex">
+                        <div class="player-options-flex">
+                            <div class="option-wrapper" title="optie steen" onclick="letsPlay('Rock')">
+                                <img src="img/option-steen.svg" alt="optie steen">
+                            </div>
+                            <div class="option-wrapper" title="optie papier" onclick="letsPlay('Paper')">
+                                <img src="img/option-papier.svg" alt="optie papier">
+                            </div>
+                            <div class="option-wrapper" title="optie schaar" onclick="letsPlay('Scissors')">
+                                <img src="img/option-schaar.svg" alt="optie schaar">
+                            </div>
+                        </div>
+                        <div class="vs-wrapper">
+                            <h2>VS</h2>
+                        </div>
+                        <div class="option-wrapper pc-wrapper" id="pc-wrapper">
+                            <div>Make your coice!</div>
+                        </div>
+                    </div>
+                    <div class="outcome-wrapper">
+                        <div>user</div>
+                        <div class="outcome-big" id="player-value"></div>
+                        <div class="outcome-big" id="action"></div>
+                        <div>comp</div>
+                        <div class="outcome-big" id="pc-value"></div>
+                        <div class="outcome-big" id="outcome"></div>
+                    </div>
+                    <div class="score-wrapper">
+                        <div id="player-score">0</div>
+                        <div>:</div>
+                        <div id="pc-score">0</div>
+                        <div class="player-name">User</div>
+                        <div class="player-name comp-name">Comp</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Start footer-->
+    <footer class="">
+
+    </footer>
+    <script src="game.js"></script>
+</body>
+</html><!DOCTYPE html>

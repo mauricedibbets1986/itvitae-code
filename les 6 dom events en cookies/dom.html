@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #test {
+            transition: all 1s ease-in;
+        }
+        .addstyle {
+            background-color: red !important;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="classname" id="test">
+        <p id="p">Hello World!</p>
+    </div>
+    <button onclick="toggleStyle()">Click me</button>
+    <div class="classname"></div>
+    <div></div>
+
+    <form action="">
+        <div>
+            <label for="">Naam</label>
+            <input type="text">
+        </div>
+        <div>
+            <label for="html">HTML</label>
+            <input type="checkbox" id="html" name="codeertalen" value="html">
+        </div>
+        <div>
+            <label for="css">CSS</label>
+            <input type="checkbox" id="css" name="codeertalen" value="css">
+        </div>
+        <div>
+            <label for="js">JavaScript</label>
+            <input type="checkbox" id="js" name="codeertalen" value="js">
+        </div>
+
+        <div id="html-hier">Leeg</div>
+        
+    </form>
+
+    <script>
+        let getTest = document.getElementById('test');
+        getTest.style.backgroundColor = "lightblue";
+        console.log(getTest);
+
+        let getClasses = document.getElementsByClassName('classname');
+        console.log(getClasses);
+
+        let getTags = document.getElementsByTagName('div');
+        console.log(getTags);
+
+        let getParagraph = document.querySelector('#test > p');
+        console.log(getParagraph);
+        console.log(getParagraph.innerHTML);
+        getParagraph.innerHTML = "<b>Hallo</b> <i>allemaal</i>";
+
+
+        let getCheckboxes = document.querySelectorAll('input[name="codeertalen"]')
+        console.log(getCheckboxes);
+
+        let getParent = document.getElementById('p').parentElement;
+        console.log(getParent);
+
+        let candyArray = ["Mars", "Snickers", "Bounty"];
+
+        let name = "Maurice";
+        document.getElementById('html-hier').innerHTML = `
+        <h2>Ik ben een heading</h2>
+        <div>
+            <p>Hallo ik ben ${name}</p>
+        </div>
+        <div id="candy"></div>
+        `
+        let candyString = ""
+        for (let x = 0; x < candyArray.length; x++) {
+            candyString += `
+            <p>${candyArray[x]}</p>
+            `
+        }
+        document.getElementById('candy').innerHTML = candyString;
+
+        let newElement = document.createElement('div');
+        getTest.appendChild(newElement);
+
+        function toggleStyle() {
+            getTest.classList.toggle('addstyle');
+        }
+        // getTest.classList.add('addstyle');
+        // getTest.classList.remove('addstyle');
+    </script>
+</body>
+</html>

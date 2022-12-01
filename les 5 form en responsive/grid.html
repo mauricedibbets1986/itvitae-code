@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .grid {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 180px 1fr 2fr 40% 1fr;
+            grid-auto-rows: 200px;
+            gap: 100px 20px;
+        }
+
+        .grid-item {
+            width: 100%;
+            height: 100%;
+        }
+
+        .grid-item1 {
+            background-color: rgba(255, 0, 0, 0.509);
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            z-index: 1;
+        }
+
+        .grid-item2 {
+            background-color: rgba(0, 128, 0, 0.448);
+            grid-column-start: 3;
+            grid-column-end: span 2;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+
+        .grid-item3 {
+            background-color: rgba(0, 0, 255, 0.417);
+            grid-column-start: 4;
+            grid-column-end: span 1;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+
+        .grid-item4 {
+            background-color: rgba(128, 0, 128, 0.416);
+            grid-column-start: 2;
+            grid-column-end: -1;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .block {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 280px 1fr;
+                grid-template-rows: repeat(160px)
+            }
+
+            .grid-item1 {
+                grid-column-start: 1;
+                grid-column-end: 1;
+                grid-row-start: 1;
+                grid-row-end: 4;
+                z-index: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h2>This is a GRID</h2>
+            <div class="grid">
+                <div class="grid-item grid-item1">
+                    <h2>Hello Grid item 1</h2>
+                </div>
+                <div class="grid-item grid-item2"></div>
+                <div class="grid-item grid-item3"></div>
+                <div class="grid-item grid-item4">
+                    <div class="block"></div>
+                </div>
+                <div class="grid-item grid-item5"></div>
+                <div class="grid-item grid-item6"></div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .click-div {
+            padding: 20px;
+            border: 4px solid black;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="button1()">Click me</button>
+    <button id="button2">Click me 2</button>
+
+    <div class="click-div">Click me</div>
+    <div class="click-div">Click me</div>
+    <div class="click-div">Click me</div>
+    <div class="click-div">Click me</div>
+    <div class="click-div">Click me</div>
+    <form>
+        <input id="password" onchange="changeInput()" type="password">
+    </form>
+    
+
+    <script>
+        window.addEventListener("load", function() {
+            console.log("page is fully loaded");
+        })
+        function button1() {
+            alert("click button1");
+        }
+        
+        document.getElementById('button2').addEventListener("click", function() {
+            alert("click button 2")
+        });
+
+        document.querySelectorAll('.click-div').forEach(function(item){
+            item.addEventListener("click", function() {
+                alert("click on div");
+            })
+        })
+
+        function changeInput() {
+            alert("value changed")
+        }
+
+        document.getElementById("password").addEventListener("keydown", function (event){
+            console.log(event);
+        })
+    </script>
+</body>
+</html>

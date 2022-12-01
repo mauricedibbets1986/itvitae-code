@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header, section {
+            /* padding: 100px 0; */
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .div-inline {
+            display: inline;
+            width: 500px;
+            height: 500px;
+        }
+        .div-inline-block {
+            display: inline-block;
+            /* display: none; */
+            width: 500px;
+            height: 500px;
+        }
+        .video-wrapper {
+            width: 100%;
+            height: 88vh;
+            position: relative;
+        }
+        .video-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .play-button{
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            background-color: rgba(255, 255, 255, 0.43);
+            /* background-color: red; */
+        }
+        .play-icon {
+            width: 0; 
+            height: 0; 
+            border-top: 22px solid transparent;
+            border-bottom: 22px solid transparent;
+            
+            border-left: 36px solid black;
+        }
+        .absolute-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .nav {
+            width: 100%;
+            height: 60px;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            z-index: 99999;
+        }
+        aside {
+            height: 100%;
+            background-color: rgb(246, 228, 154);
+            width: 200px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 1;
+            padding-top: 200px;
+        }
+        .aside-div {
+            position: sticky;
+            top: 60px;
+            width: 100%;
+            height: 100px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+
+        </div>
+        <div class="container">
+            <p>Ik ben een paragraaf</p>
+            <a href="">Ik ben een linkje</a>
+            <a href="">Ik ben ook een linkje</a>
+            <div class="div-inline">Ik ben een div inline</div>
+            <div class="div-inline-block">Ik ben een div inline block</div>
+        </div>
+    </header>
+    <main>
+        <div>
+            
+        </div>
+        <section>
+            <div class="container">
+                <h2>Awesome header</h2>
+                <div class="video-wrapper">
+                    <img src="forest.jfif" alt="afbeelding: video thumb">
+                    <div class="play-button absolute-center">
+                        <div class="play-icon absolute-center"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+    <aside>
+        <div class="aside-div"></div>
+    </aside>
+</body>
+</html>

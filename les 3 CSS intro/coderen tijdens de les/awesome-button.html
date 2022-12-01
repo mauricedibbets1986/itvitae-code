@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            border: none;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img {
+            max-width: 100%;
+        }
+
+        .page-wrapper {
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 100px 0;
+            background: linear-gradient(45deg,#EFE8DB,#C1D5D9);
+            height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 8vw;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        h1 {
+            font-size: 66px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600;
+            line-height: 1.02;
+            color: #020202;
+            margin-bottom: 40px;
+        }
+        .header-text {
+            max-width: 50%;
+        }
+        p {
+            font-size: 24px;
+        }
+        .button-wrapper {
+            margin-top: 40px;
+        }
+        .btn {
+            font-size: 28px;
+            padding: 24px 44px;
+            background-color: #020202;
+            color: #fafafa;
+            border-radius: 16px;
+            text-align: center;
+        }
+        .btn.btn2{
+            background-color: #fafafa;
+            color: #020202;
+            opacity: 0%;
+        }
+        .btn.btn1:hover{
+            opacity: 0%;
+        }
+        .btn.btn1:hover + .btn.btn2 {
+            opacity: 100%;
+        }
+        .btn.btn2:hover + .btn.btn1 {
+            opacity: 100%;
+        }
+
+        .header-img {
+            padding-left: 80px;
+            max-height: 50vh;
+            max-width: 50%;
+        }
+        .header-img img{
+            object-fit: contain;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header>
+            <div class="container">
+                <div class="header-text">
+                    <h1>Want to know more about great stuff?</h1>
+                    <p>We are awesome. Dont believe us? Click the button below.</p>
+                    <div class="button-wrapper">
+                        <button class="btn btn1">Click me now!</button>
+                        <button class="btn btn2">No click me!</button>
+                    </div>
+                </div>
+                <div class="header-img">
+                    <img src="header-img.png" alt="afbeelding: lorem">
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>

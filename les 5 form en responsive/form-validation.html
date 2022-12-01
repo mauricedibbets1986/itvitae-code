@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Form validation HTML</h2>
+            <form>
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" minlength="7" maxlength="15" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="leeftijd">Leeftijd</label>
+                    <input type="number" id="leeftijd" name="leeftijd" min=18 required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="text" id="password" name="password" pattern="[A-Za-z0-9_]{1,15}">
+                </div>
+
+                <div>
+                    <button type="submit">Verstuur formulier</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <h2>Form validation JS</h2>
+            <form id="formjs">
+                <div>
+                    <label for="usernamejs">Username</label>
+                    <input type="text" id="usernamejs" name="usernamejs">
+                </div>
+                <div>
+                    <label for="passwordjs">Wachtwoord</label>
+                    <input type="text" id="passwordjs" name="passwordjs">
+                </div>
+
+                <button type="submit">Submit</button>
+
+                <div id="error"></div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const username = document.getElementById('usernamejs');
+        const password = document.getElementById('passwordjs');
+        const form = document.getElementById('formjs');
+        const errorElement = document.getElementById('error');
+
+        form.addEventListener('submit', (e) => {
+            let messages = [];
+            if (username.value === '' || username.value == null) {
+                messages.push('Name is required');
+            }
+            if (password.value.length < 6) {
+                messages.push('password must be 6 or more characters');
+            }
+            if (password.value.length > 20) {
+                messages.push('password must be less or equal to 20 characters');
+            }
+
+            if (password.value == 'password') {
+                messages.push('password can not be equal to "password"');
+            }
+
+            console.log(messages.length);
+            if (messages.length > 0) {
+                e.preventDefault();
+                errorElement.innerText = messages.join('\n');
+            }
+        })
+    </script>
+</body>
+</html>

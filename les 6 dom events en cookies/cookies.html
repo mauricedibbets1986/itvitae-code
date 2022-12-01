@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welkom terug: <span id="name"></span></h1>
+
+    <form action="javascript:void(0);" onsubmit="formFunction()">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div>
+            <button type="submit">Send</button>
+        </div>
+    </form>
+
+    <script>
+        window.addEventListener("load", function () {
+            console.log("page is fully loaded");
+            console.log(document.cookie);
+            naam = getCookie('username');
+            console.log(naam);
+            if (naam != "") {
+                document.getElementById('name').innerHTML = naam;
+            } else {
+                document.getElementById('name').innerHTML = "John Doe";
+            }
+        })
+
+        function formFunction() {
+            let username = document.getElementById('username').value;
+            document.cookie = `username = ${username}`;
+        }
+        document.cookie = `nogeencookie = lekker`;
+
+        function getCookie(key) {
+            console.log("in get cookie")
+            let name = key + "="; //username=
+            let ca = document.cookie.split(';'); // split de cookies in een array
+            for(let x = 0; x < ca.length; x++) {  // loop door de array met cookies
+                let c = ca[x]; // haal de cookie die aan de beurt is bv: (spatie)username=Kees 
+                console.log(c); // (spatie)username=Kees
+                while (c.charAt(0) == ' ') { // haal spaties weg
+                    c= c.substring(1); 
+                    console.log(c); // username=Kees
+                }
+                if (c.indexOf(name) == 0) {
+                    console.log(c.substring(name.length, c.length)); // Kees
+                    return c.substring(name.length, c.length); // name.length is username= (9 tekens)
+                }
+            }
+            return "";
+        }
+    </script>
+</body>
+</html>

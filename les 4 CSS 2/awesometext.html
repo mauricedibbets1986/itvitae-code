@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            border: none;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        body {
+            font-size: 1.4rem;
+            line-height: 1.4;
+            font-family: 'Open Sans', Arial, sans-serif;
+            color: blue;
+        }
+        section {
+            padding: 100px 0;
+        }
+        .container {
+            /* maximale breedte */
+            max-width: 1000px;
+            /* in het midden van het scherm horizontaal */
+            margin: 0 auto;
+            /* niet plakt aan de zijkant (content) */
+            padding: 0 60px;
+        }
+        p {
+            text-align:justify;
+        }
+        .heading1 {
+            font-size: 6em;
+            line-height: 1.04;
+            font-weight: 900;
+            text-align:center;
+            margin-bottom: 40px;
+
+            transition: all 2s ease-in-out;
+        }
+        .heading1:hover {
+            transform: rotate(360deg);
+            background-image: url(test.gif);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: cover;
+        }
+        .heading2 {
+            color: red;
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px black;
+        }
+        .fontpair-wrapper {
+            padding: 100px 120px;
+            min-height: 100vh;
+        }
+        .pair1 {
+            background-image: url(gogh.jpeg);
+            background-size: cover;
+        }
+        .pair1 h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 0.92;
+            color: white;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        .pair1 h2 i {
+            font-family: 'Dancing Script', cursive;
+        }
+        .pair1 h2 .brand-color {
+            color: #FFD700;
+        }
+        .pair1 p {
+            font-size: 2rem;
+            font-family: 'Nunito Sans', sans-serif;
+            max-width: 400px;
+            margin-left: auto;
+            color: white;
+            text-shadow: 1px 1px 0 black;;
+        }
+    </style>
+    <link rel="stylesheet" href="google-fonts.css">
+</head>
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <h2 class="heading1">Text properties are awesome</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quo, aut, nulla atque perspiciatis, cum laborum dicta cumque tempore quod aspernatur hic est reprehenderit error. Assumenda dicta dolorem a voluptates! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quo, aut, nulla atque perspiciatis, cum laborum dicta cumque tempore quod aspernatur hic est reprehenderit error. Assumenda dicta dolorem a voluptates!</p>
+                <a href="lees meer"></a>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2 class="heading2">text shadow</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quo, aut, nulla atque perspiciatis, cum laborum dicta cumque tempore quod aspernatur hic est reprehenderit error. Assumenda dicta dolorem a voluptates!</p>
+                <a href="lees meer"></a>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="fontpair-wrapper pair1">
+                    <h2>Step<br>
+                        <i>into</i> 
+                        <span class="brand-color">van
+                            <br>Gogh's
+                        </span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        world</h2>
+                    <p>Vincent Willem van Gogh was a Dutch Post-Impressionist painter who posthumously became one of the most famous and influential figures in Western art history. In a decade, he created about 2,100 artworks, including around 860 oil paintings, most of which date from the last two years of his life.</p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+</body>
+</html>

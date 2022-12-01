@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            font-size: 12px;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            /* flex-wrap: wrap; */
+            gap: 40px;
+        }
+        .flex1, .flex2 {
+            height: 400px;
+            padding: 40px;
+            flex-grow: 1;
+        }
+        .flex1 {
+            background-color: aqua;
+            flex-basis: 400px;
+        }
+        .flex2 {
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <div class="flex1">Ik ben</div>
+                <div class="flex2">responsive</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

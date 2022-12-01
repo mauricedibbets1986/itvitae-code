@@ -1,0 +1,358 @@
+/* ===================================== 
+   Main Styles
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    position: relative;
+}
+
+body {
+    font-size: 20px;
+    line-height: 1.32;
+    font-family: 'Open Sans', sans-serif;
+    color: #44414D;
+    background: #FEFEFE;
+}
+
+/* sections containers wrappers*/
+.header {
+    padding-top: 140px;
+    padding-bottom: 100px;
+    background: #ECFBF1;
+    position: relative;
+}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.container {
+    max-width: 1660px;
+    margin: 0 auto;
+    padding: 0 80px;
+    position: relative;
+}
+
+.button-wrapper {
+    padding-top: 40px;
+}
+
+/* header-content */
+.header-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 -40px;
+    position: relative;
+}
+
+.header-text-row {
+    flex-grow: 3;
+    flex-shrink: 0;
+    max-width: 56%;
+    padding: 40px 40px;
+    position: relative;
+}
+
+.header-img-row {
+    flex-grow: 2;
+    flex-shrink: 1;
+    padding: 40px 40px;
+    position: relative;
+    z-index: 9;
+}
+
+.header-img-wrapper {
+    padding-left: 8vw;
+    position: relative;
+}
+
+.header-diagonal-line-wrapper {
+    position: absolute;
+    background: #FEFEFE;
+    max-width: 100%;
+    height: 52px;
+    overflow: hidden;
+    left: 0;
+    right: auto;
+    top: auto;
+    bottom: 0;
+}
+
+.header-diagonal-line {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100vw 52px 0;
+    border-top-color: transparent;
+    border-right-color: #ECFBF1;
+    border-bottom-color: transparent;
+}
+
+.header-dots-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48%;
+}
+
+.header-nav {
+    padding: 28px 0;
+    margin: 20px -10px 0 -10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-nav-item {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding: 6px 10px;
+    color: #44414D;
+    text-decoration: none;
+}
+    
+.header-nav-item:hover {
+    text-decoration: underline;
+}
+
+/* text and buttons */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.04;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 36px;
+}
+
+h2 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-accent {
+    color:#00CD98;
+}
+
+button, .button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background: #00CD98;
+    padding: 12px 40px;
+    border: none;
+}
+
+button:hover, .button:hover {
+    background: #00e2a8;
+}
+
+
+/* navigation */
+.nav-outer-wrapper {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99999;
+}
+
+.nav-scrolled {
+    background: white;
+}
+
+.nav-outer-flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    height: 100px;
+    max-width: 28%;
+}
+
+.logo-top-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.logo-name-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #00CD98;
+}
+
+.nav-menu {
+
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 100px;
+}
+
+.nav-item {
+    display: block;
+    flex-shrink: 1;
+}
+
+.nav-item > a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 600;
+    padding: 8px 20px;
+    color: #44414D;
+    text-decoration: none;
+}
+
+.nav-item > a:hover {
+    text-decoration: underline;
+}
+
+.nav-item > a:active {
+    color: #00CD98;;
+}
+
+
+/* ===================================== 
+   Responsive
+======================================== */
+
+/* smaller laptops */
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 80px 0;
+    }
+
+    .container {
+        padding: 0 60px;
+    }
+
+    .header-img-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .logo-top-text {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    
+    .logo-name-text {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .nav-item > a {
+        font-size: 20px;
+        line-height: 1;
+        font-weight: 600;
+        padding: 8px 16px;
+    }
+}
+
+
+
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 40px;
+    }
+
+    .header-flex {
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0 0;
+        position: relative;
+    }
+    
+    .header-text-row {
+        flex-grow: 1;
+        flex-shrink: 1;
+        max-width: none;
+        padding: 0px 0px;
+    }
+    
+    .header-img-row {
+        flex-grow: 1;
+        flex-shrink: 1;
+        padding: 40px 40px;
+        position: relative;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .section {
+        padding: 40px 0;
+    }
+
+    .container {
+        padding: 0 24px;
+    }
+    
+    h1 {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+}

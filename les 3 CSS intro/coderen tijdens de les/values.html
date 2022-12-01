@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            font-size: 12px;
+            color: #ff0000;
+            color: rgb(255, 0, 0);
+            color: rgba(255, 0, 0, 0.9);
+        }
+
+        p.p-rem {
+            font-size: 2rem;
+        }
+
+        p.p-em {
+            font-size: 2em;
+        }
+        .rotate {
+            transform: rotate(45deg);
+            left: 140px;
+        }
+        button {
+            transition: all 1s ease-in-out;
+            background-color: purple;
+        }
+        button:hover {
+            transform: scale(3) rotate(720deg);
+            filter: blur(4px);
+            background-color: blue;
+        }
+
+        .math-test {
+            width: calc(50vw + 200px);
+            height: 200px;
+            background: linear-gradient(#e66465, #9198e5);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p class="p-rem">Ik ben een p in de header</p>
+        <p class="p-em">Nog een p in de header</p>
+    </header>
+    <section>
+        <p class="rotate">ik ben een p in een section</p>
+        <button>Klik mij</button>
+    </section>
+    <div class="math-test"></div>
+</body>
+
+</html>

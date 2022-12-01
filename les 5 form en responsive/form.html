@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Input forms</h2>
+            <form action="javascript:void(0);" onsubmit="formFunction()">
+                <label for="jghjgh">Voer naam in</label>
+                <!-- <input type="text" id="naam" name="naam" placeholder="voornaam" onchange="myFunction()"> -->
+                <input type="text" id="naam" name="naam" placeholder="voornaam" required>
+                <input type="number" id="leeftijd" name="leeftijd" placeholder="leeftijd" required>
+                <input type="password" id="wachtwoord" name="wachtwoord" placeholder="wachtwoord">
+                <input type="email" id="email" name="email" placeholder="email">
+                <input type="date" id="geboortedatum" name="geboortedatum" placeholder="geboortedatum">
+                
+                <fieldset>
+                    <legend>Welke snoep vind jij lekker?</legend>
+                    <input type="checkbox" id="mars" name="snoep" value="mars">
+                    <label for="mars">Mars</label>
+                    <input type="checkbox" id="bounty" name="snoep" value="bounty" checked>
+                    <label for="bounty">Bounty</label>
+                    <input type="checkbox" id="snicker" name="snoep" value="snicker">
+                    <label for="snicker">Snicker</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Favoriete codeertaal</legend>
+                    <input type="radio" id="html" name="codeertaal" value="html" checked>
+                    <label for="html">HTML</label>
+                    <input type="radio" id="css" name="codeertaal" value="css">
+                    <label for="css">CSS</label>
+                    <input type="radio" id="java" name="codeertaal" value="java">
+                    <label for="java">JAVA</label>
+                </fieldset>
+
+                <select name="maat" id="maat">
+                    <option value="small">S</option>
+                    <option value="medium">M</option>
+                    <option value="large">L</option>
+                </select>
+                
+                <input type="submit" value="Versturen">
+            </form>
+        </section>
+    </main>
+
+    <script>
+        // let naamelement = document.getElementById('naam');
+        // console.log(naamelement);
+        
+
+        // function myFunction() {
+        //     let naam = document.getElementById('naam').value;
+        //     console.log(naam)
+        // }
+
+        function formFunction() {
+            let naam = document.getElementById('naam').value;
+            console.log(naam)
+
+            let codeertaal = document.querySelector('input[name="codeertaal"]:checked').value;
+            console.log(codeertaal);
+
+            let checkboxes = document.querySelectorAll('input[name="snoep"]');
+            console.log(checkboxes);
+            let snoep = [];
+            let counter = 0;
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    snoep.push(checkboxes[i].value);
+                    counter++;
+                }
+            }
+            console.log(snoep);
+            console.log(counter)
+        }
+    </script>
+</body>
+</html>

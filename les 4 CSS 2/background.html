@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+           margin: 0;
+           box-sizing: border-box; 
+        }
+        header {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: red;
+        }
+        .container {
+            /* breed 100% */
+            width: 100%;
+            /* maximaal 1200px */
+            max-width: 1200px;
+            /* in het midden */
+            margin: 0 auto;
+            /* altijd minimaal 80px zijkanten */
+            padding: 0 80px;
+        }
+        h1 {
+            font-size: 100px;
+        }
+        .label {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 4px 12px;
+            display: inline-block;
+            border-radius: 12px 0px 4px 4px;
+        }
+        .header1 {
+            background-color: #40916C;
+        }
+        .header2 {
+            background-image: url(https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+            /* background-repeat: no-repeat; */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: lightblue;
+        }
+        .header3 {
+            /* background: linear-gradient(to right,#99e2b4, #143601, #036666) */
+            background: radial-gradient(#99e2b4, transparent 40%);
+            color: #036666;
+            background-attachment: fixed;
+        }
+        .header3 .label {
+            background-color: #036666;
+        }
+    </style>
+</head>
+<body>
+    <header class="header1">
+        <div class="container">
+            <div class="label">Discover</div>
+            <h1>Mystic forest<br>in the north of Wales</h1>
+        </div>
+    </header>
+    <header class="header2">
+        <div class="container">
+            <div class="label">Discover</div>
+            <h1>Mystic forest<br>in the north of Wales</h1>
+        </div>
+    </header>
+    <header class="header3">
+        <div class="container">
+            <div class="label">Discover</div>
+            <h1>Mystic forest<br>in the north of Wales</h1>
+        </div>
+    </header>
+</body>
+</html>

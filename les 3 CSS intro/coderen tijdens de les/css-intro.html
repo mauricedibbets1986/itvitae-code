@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            border: none;
+        }
+        body {
+            color:red;
+            font-size: 20px;
+        }
+
+        /* css typen */
+        .red {
+            color: red;
+        }
+        .heading-section.heading-section-large {
+            color: blue;
+        }
+        h2 {
+            color: purple;
+        }
+        .heading-section {
+            color: green;
+        }
+        #h2-id {
+            color:turquoise;
+        }
+
+        .inheritance {
+            color:pink;
+        }
+    </style>
+    <link rel="stylesheet" href="css-intro.css">
+</head>
+<body>
+    <!-- notitie in HTML -->
+    <h1 class="red">Hello World</h1>
+    <h1 style="color:chartreuse;">Hello World</h1>
+    <p class="blue">Deze wordt ook rood</p>
+    <div>
+        <p>Ik zit in een div</p>
+        <span>
+            <p>Ik zit ook in een div</p>
+        </span>
+    </div>
+
+    <div class="inheritance">
+        <h2>Ik ben een h2 in een div met de class inheritance</h2>
+    </div>
+
+    <h2 class="heading-section heading-section-large" id="h2-id" style="color:rgb(130, 65, 18)">Ik ben een h2 heading</h2>
+</body>
+</html>

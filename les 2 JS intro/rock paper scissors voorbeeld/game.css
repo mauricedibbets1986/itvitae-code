@@ -1,0 +1,119 @@
+/* ===================================== 
+    Rock Paper Scissors CSS
+======================================== */
+
+.game-wrapper {
+    padding: 40px 48px;
+    background: #44414D;
+    max-width: 1200px;
+}
+
+.player-vs-pc-flex {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+}
+
+.player-options-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    margin: 0 -12px;
+}
+
+.option-wrapper {
+    margin: 0 12px;
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: solid 6px white;
+    cursor: pointer;
+}
+
+.option-wrapper:hover {
+    border: solid 6px #00e2a8;
+}
+
+.pc-wrapper {
+    border: solid 6px black;
+    border-radius: 0%;
+    background: #313034;
+    text-align: center;
+    color: white;
+}
+
+.pc-wrapper:hover {
+    border: solid 6px black;
+}
+
+.option-wrapper > img {
+    width: 80%;
+    height: 80%;
+}
+
+.vs-wrapper {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.outcome-wrapper {
+    color: white;
+    font-size: 12px;
+    margin-bottom: 24px;
+}
+
+.outcome-wrapper > div {
+    display: inline-block;
+}
+
+.outcome-big {
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#action, #outcome {
+    color: #00C592;
+}
+
+.score-wrapper {
+    position: relative;
+    margin: 0 24px;
+    width: 180px;
+    padding: 12px 24px;
+    border: solid 4px white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    line-height: 32px;
+    color: white;
+}
+
+.player-name {
+    font-size: 12px;
+    line-height: 12px;
+    padding: 6px 0;
+    width: 48px;
+    text-align: center;
+    background: #00CD98;
+    position: absolute;
+    left: -24px;
+}
+
+.comp-name {
+    background: #136A65;
+    left: auto;
+    right: -24px;
+}
