@@ -26,6 +26,15 @@
             position: relative;
         }
 
+        .playfield-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+            animation: playfield-color 0.8s infinite;
+            opacity: 50%;
+        }
+
         .ball {
             height: 120px;
             width: 120px;
@@ -36,7 +45,7 @@
             translate: -50%;
             bottom: 100px;
             z-index: 1;
-            animation: ball-bounce 1s infinite;
+            animation: ball-bounce 0.8s infinite;
         }
 
         .ball-shadow {
@@ -48,7 +57,7 @@
             left: 50%;
             translate: -50%;
             bottom: 82px;
-            animation: ball-shadow 1s infinite;
+            animation: ball-shadow 0.8s infinite;
         }
 
         .playfield-line {
@@ -63,26 +72,50 @@
 
         }
 
+        @keyframes playfield-color {
+            0% {
+                background-color: #740c00;
+                webkit-animation-timing-function: ease-in;
+            }
+
+            22% {
+                background-color: #740c0000;
+                webkit-animation-timing-function: ease-in;
+            }
+
+            88% {
+                bbackground-color: #740c0000;
+                webkit-animation-timing-function: ease-in;
+            }
+
+            100% {
+                background-color: #740c00;
+                webkit-animation-timing-function: ease-in;
+            }
+        }
 
         @keyframes ball-bounce {
             0% {
                 bottom: 88px;
                 height: 88px;
-                width: 144px;
+                width: 184px;
                 -webkit-animation-timing-function: ease-in;
             }
 
             20% {
                 bottom: 100px;
-                height: 120px;
+                height: 128px;
+                width: 112px;
                 -webkit-animation-timing-function: ease;
             }
 
-            /* 40% {
-                height: 110px;
+            42% {
+                bottom: 380px;
+                height: 140px;
+                width: 120px;
                 -webkit-animation-timing-function: ease;
 
-            } */
+            }
 
             50% {
                 bottom: 400px;
@@ -98,9 +131,10 @@
 
             } */
 
-            78% {
+            82% {
                 bottom: 88px;
                 height: 120px;
+                width: 124px;
                 -webkit-animation-timing-function: ease;
 
             }
@@ -108,7 +142,7 @@
             100% {
                 bottom: 88px;
                 height: 92px;
-                width: 144px;
+                width: 184px;
                 -webkit-animation-timing-function: ease-in-out;
 
             }
@@ -169,6 +203,7 @@
             <div class="playfield-line"></div>
             <div class="ball"></div>
             <div class="ball-shadow"></div>
+            <div class="playfield-overlay"></div>
         </div>
     </div>
 </body>
