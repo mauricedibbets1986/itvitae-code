@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .star-wars-flex {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .star-wars-item {
+            background-color: black;
+            padding: 24px;
+            color: white;
+            border-radius: 24px;
+            box-shadow: 4px 4px 8px red;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Star wars characters</h2>
+            <div id="starwars" class="star-wars-flex">
+                <button onclick="getStarWars(4)">Get them all</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+        function getStarWars(id) {
+            const xhttp = new XMLHttpRequest;
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === XMLHttpRequest.DONE) {
+                    if (xhttp.status === 'OK' || (xhttp.status >= 200 && xhttp.status < 400)) {
+                        let contentDB = JSON.parse(xhttp.responseText);
+                        console.log(contentDB);
+                        // let StarWarsPeople = contentDB.results;
+                        // starWarsHTML = "";
+                        // for (let x = 0; x < StarWarsPeople.length; x++) {
+                        //     starWarsHTML +=
+                        //     `
+                        //     <div class="star-wars-item">
+                        //         <h3>${StarWarsPeople[x].name}</h3>
+                        //         <p>Height: ${StarWarsPeople[x].height}</p>
+                        //     </div>
+                        //     `
+                        // }
+                        starWarsHTML = 
+                        `
+                            <div class="star-wars-item">
+                                <h3>${contentDB.name}</h3>
+                                <p>Height: ${contentDB.height}</p>
+                            </div>
+                            `;
+                        document.getElementById('starwars').innerHTML = starWarsHTML;
+                    }
+                }
+            }
+            xhttp.open("GET", "https://swapi.dev/api/people/" + id);
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>

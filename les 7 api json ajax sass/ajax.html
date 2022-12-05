@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="text"></div>
+    <div id="employees"></div>
+
+    <script>
+        getText();
+        function getText() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === XMLHttpRequest.DONE) {
+                    if (xhttp.status === 'OK' || (xhttp.status >= 200 && xhttp.status < 400)) {
+                        console.log("GET status is gelukt!");
+                        let responseText = xhttp.responseText;
+                        console.log(responseText);
+
+                        document.getElementById('text').innerHTML = `<h1>${responseText}</h1>`;
+                    } else {
+                        console.log("GET status is NIET gelukt!");
+                    }
+                }
+            }
+            xhttp.open("GET", "text.txt");
+            xhttp.send();
+        }
+
+        getEmployees(2);
+        function getEmployees(id) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === XMLHttpRequest.DONE) {
+                    if (xhttp.status === 'OK' || (xhttp.status >= 200 && xhttp.status < 400)) {
+                        let contentObj = JSON.parse(xhttp.responseText);
+                        employeesHTML = "";
+
+                        for (let x = 0; x < contentObj.employees.length; x++) {
+                            if (contentObj.employees[x].id === id) {
+                                employeesHTML +=
+                                    `
+                                    <div>
+                                        <h4>${contentObj.employees[x].name}</h4>
+                                    </div>
+                                    `
+                            }
+                        }
+
+                        // for (let x = 0; x < contentObj.employees.length; x++) {
+                        //     console.log(contentObj.employees[x]);
+                        //     employeesHTML +=
+                        //     `
+                                //     <div>
+                                //         <h4>${contentObj.employees[x].name}</h4>
+                                //     </div>
+                                //     `
+                                // }
+                                document.getElementById('employees').innerHTML = employeesHTML;
+                            }
+                        }
+                    }
+                    xhttp.open("GET", "employees.json");
+                    xhttp.send();
+                }
+    </script>
+</body>
+
+</html>
