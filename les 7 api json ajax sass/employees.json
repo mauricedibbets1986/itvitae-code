@@ -1,0 +1,9 @@
+{
+    "employees":
+    [
+        {"id":1, "name":"John", "age":30, "city":"Amsterdam"},
+        {"id":2, "name":"Pieter", "age":32, "city":"Spijkenisse"},
+        {"id":3, "name":"Carla", "age":22, "city":"Almere"},
+        {"id":4, "name":"Robbbbbert", "age":26, "city":"Leiden"}
+    ]
+}
