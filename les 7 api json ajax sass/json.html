@@ -10,6 +10,17 @@
     <div id="employees">
         <!-- all employees -->
     </div>
+    <div>
+        <form action="">
+            <select name="select-employees" id="select-employees" onchange="getEmployee()">
+                <!-- employee options -->
+            </select>
+        </form>
+    </div>
+    <div id="employee">
+        Pick an employee in the dropdown
+        <!-- 1 employee -->
+    </div>
 
     <script>
         let city = '{"name":"Amersfoort","residents":152000}';
@@ -51,8 +62,23 @@
 
         document.getElementById('employees').innerHTML += employeesHTML;
 
-        
+        window.onload = function () {
+            let employeeObj = JSON.parse(employeeJSON);
+            let optionsHTML = "";
+            for (let x = 0; x < employeeObj.employees.length; x++) {
+                optionsHTML +=
+                `
+                    <option value="${employeeObj.employees[x].id}">${employeeObj.employees[x].name}</option>
+                `
+            }
+            document.getElementById('select-employees').innerHTML = optionsHTML;
+        }
 
+        function getEmployee() {
+            // geselecteerd waarde ophalen
+            // employees JSON parsen
+            // Juiste employee tonen in HTML
+        }
         
     </script>
     
