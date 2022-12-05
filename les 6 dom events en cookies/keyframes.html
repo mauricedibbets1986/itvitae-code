@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .playfield-wrapper {
+            width: 100vw;
+            height: 100vh;
+            padding: 6vh 6vw;
+        }
+        
+        .playfield {
+            width: 100%;
+            height: 100%;
+            background-color: #FAB001;
+            position: relative;
+        }
+
+        .ball {
+            height: 120px;
+            width: 120px;
+            background-color: #DD3400;
+            border-radius: 200%;
+            position: absolute;
+            left: 50%;
+            translate: -50%;
+            bottom: 100px;
+            z-index: 1;
+            animation: ball-bounce 1s infinite;
+        }
+
+        .ball-shadow {
+            height: 20px;
+            width: 120px;
+            background-color: #740C00;
+            border-radius: 100%;
+            position: absolute;
+            left: 50%;
+            translate: -50%;
+            bottom: 82px;
+            animation: ball-shadow 1s infinite;
+        }
+
+        .playfield-line {
+            width: 80%;
+            position: absolute;
+            bottom: 126px;
+            left: 50%;
+            translate: -50%;
+            height: 4px;
+            background-color: #212121;
+            border-radius: 2px;
+
+        }
+
+
+        @keyframes ball-bounce {
+            0% {
+                bottom: 88px;
+                height: 88px;
+                width: 144px;
+                -webkit-animation-timing-function: ease-in;
+            }
+
+            20% {
+                bottom: 100px;
+                height: 120px;
+                -webkit-animation-timing-function: ease;
+            }
+
+            /* 40% {
+                height: 110px;
+                -webkit-animation-timing-function: ease;
+
+            } */
+
+            50% {
+                bottom: 400px;
+                height: 120px;
+                -webkit-animation-timing-function: ease;
+            }
+
+
+            /* 70% {
+                height: 120px;
+                border-radius: 200%;
+                -webkit-animation-timing-function: ease;
+
+            } */
+
+            78% {
+                bottom: 88px;
+                height: 120px;
+                -webkit-animation-timing-function: ease;
+
+            }
+
+            100% {
+                bottom: 88px;
+                height: 92px;
+                width: 144px;
+                -webkit-animation-timing-function: ease-in-out;
+
+            }
+        }
+
+        @keyframes ball-shadow {
+            0% {
+                width: 144px;
+                -webkit-animation-timing-function: ease-in;
+                opacity: 88%;
+                filter: blur(0.2px);
+            }
+
+            20% {
+                width: 120px;
+                opacity: 66%;
+                filter: blur(1px);
+            }
+
+            /* 40% {
+                height: 110px;
+                -webkit-animation-timing-function: ease;
+
+            } */
+
+            50% {
+                width: 60px;
+                opacity: 44%;
+                filter: blur(2px);
+            }
+
+
+            /* 70% {
+                height: 120px;
+                border-radius: 200%;
+                -webkit-animation-timing-function: ease;
+
+            } */
+
+            78% {
+                width: 120px;
+                opacity: 80%;
+                filter: blur(1px);
+            }
+
+            100% {
+                width: 144px;
+                opacity: 88%;
+                filter: blur(0.2px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="playfield-wrapper">
+        <div class="playfield">
+            <div class="playfield-line"></div>
+            <div class="ball"></div>
+            <div class="ball-shadow"></div>
+        </div>
+    </div>
+</body>
+
+</html>
