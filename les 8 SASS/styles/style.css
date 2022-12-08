@@ -1,0 +1,64 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  background-color: #c6538c;
+}
+
+h1 {
+  color: #212121;
+}
+
+p {
+  color: #212121;
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 200px;
+  background-color: burlywood;
+}
+
+section {
+  padding: 200px;
+  background-color: brown;
+}
+section h2 {
+  color: white;
+}
+section div {
+  background-color: aqua;
+}
+section div h3 {
+  color: red;
+}
+
+button {
+  padding: 12px;
+  background-color: #c6538c;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.4s ease-in-out;
+}
+button:hover {
+  scale: 1.08;
+  background-color: rgb(49, 49, 255);
+}
+
+.element {
+  display: inline-block;
+  width: 33%;
+  padding: 24px;
+  background-color: bisque;
+}
+.element--large {
+  width: 100%;
+  background-color: aquamarine;
+}/*# sourceMappingURL=style.css.map */

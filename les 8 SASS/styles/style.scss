@@ -1,0 +1,67 @@
+@use 'colors' as *;
+
+@mixin flexCenter($align-items, $height) {
+    display: flex;
+    justify-content: center;
+    align-items: $align-items;
+    height: $height;
+}
+
+header {
+    @include flexCenter(flex-end, 100vh);
+    background-color: $base-color;
+}
+
+h1 {
+    color: $dark-color;
+}
+
+p {
+    color: $dark-color;
+}
+
+.block {
+    @include flexCenter(center, 400px);
+    width: 200px;
+    background-color: burlywood;
+}
+
+section {
+    padding: 200px;
+    background-color: brown;
+    h2 {
+        color: white;
+    }
+    div {
+        background-color: aqua;
+        h3 {
+            color: red;
+        }
+    }
+}
+
+button {
+    padding: 12px;
+    background-color: $base-color;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+        scale: 1.08;
+        background-color: rgb(49, 49, 255);
+    }
+}
+
+.element {
+    display: inline-block;
+    width: 33%;
+    padding: 24px;
+    background-color: bisque;
+    &--large {
+        width: 100%;
+        background-color: aquamarine;
+    }
+}
