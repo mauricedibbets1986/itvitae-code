@@ -69,3 +69,40 @@ LIMIT 5;
 -- IS NULL en IS NOT NULL
 SELECT * FROM artikel
 WHERE naam IS NOT NULL;
+
+-- miniopdracht 2
+-- 1 Haal de 3 klanten op die met hun naam als eerst voorkomen in het alfabet
+SELECT * FROM klant
+ORDER BY naam
+LIMIT 3;
+
+-- 2 Hoeveel high light pennen zijn besteld? (gebruik sum)
+SELECT * FROM artikel;
+
+SELECT artnr, SUM(aantal) FROM besteldartikel
+WHERE artnr = 122
+GROUP BY artnr;
+
+SELECT artnr, aantal FROM besteldartikel
+WHERE artnr = 122;
+
+-- INSERT INTO
+INSERT INTO artikel (artnr, naam, adviesprijs)
+VALUES
+(201, 'Cartman Bubblehead', 12.50),
+(202, 'Bruce Lee Bubblehead', 12.50),
+(203, 'Elon Bubblehead', 12.50);
+
+-- UPDATE
+UPDATE klant
+SET adres = 'Atoomweg 1'
+WHERE klantnr = 121;
+
+SELECT * FROM klant
+WHERE klantnr = 121;
+
+UPDATE artikel
+SET adviesprijs = adviesprijs + 1
+WHERE adviesprijs > 5;
+
+SELECT * FROM artikel;
