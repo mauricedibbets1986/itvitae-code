@@ -111,3 +111,39 @@ SELECT * FROM artikel;
 -- DELETE
 DELETE FROM klant
 WHERE klantnr = 99999;
+
+
+-- EXTRA OPDRACHT
+-- 1 Toon de verschillende filialen (toon filiaalnummer, adres en plaats) waar een klant
+-- met klantnummer 543214 (klantnr Pieter) aankopen heeft gedaan en op welke datum.
+SELECT DISTINCT f.filiaalnummer, f.adres, f.plaats
+FROM filiaal f
+INNER JOIN transactie t ON t.filiaalnummer = f.filiaalnummer
+INNER JOIN klant k ON t.klantnummer = k.klantnummer
+WHERE  k.klantnummer = 341234;
+
+-- 2 Toon het totaalbedrag dat de klant met klantnummer 432210 heeft besteed aan aankopen.
+-- Je hoeft dus alleen het totaalbedrag (1 waarde) te tonen, niet wat of wie of wanneer.
+SELECT sum(a.aantal*p.prijs) AS totaalbedrag 
+FROM aankoop a 
+inner join product p on p.productnummer = a.product 
+inner join transactie t on t.transactienummer = a.transactienummer
+inner join klant k on k.klantnummer = t.klantnummer
+WHERE k.klantnummer = 432210;
+
+-- 3 Toon de hoeveelheid dat 'planken' is verkocht in de maand december 2022 per Filiaal.
+SELECT f.plaats, sum(a.aantal) AS totaal_gekocht
+FROM product p
+inner join aankoop a on a.product = p.productnummer
+inner join transactie t on t.transactienummer = a.transactienummer
+inner join filiaal f on f.filiaalnummer = t.filiaalnummer
+WHERE t.datum <= '2022-12-31' and t.datum >= '2022-12-01'
+AND p.omschrijving = 'plank'
+GROUP BY f.plaats;
+
+-- of: 
+-- and t.datum between '2019-12-01' and '2019-12-31'
+-- of 
+-- and date_part('month', t.datum) = 12
+-- of 
+-- and extract('month' from t.datum) = 12
