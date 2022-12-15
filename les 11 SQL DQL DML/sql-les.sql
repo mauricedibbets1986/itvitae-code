@@ -106,3 +106,8 @@ SET adviesprijs = adviesprijs + 1
 WHERE adviesprijs > 5;
 
 SELECT * FROM artikel;
+
+
+-- DELETE
+DELETE FROM klant
+WHERE klantnr = 99999;
