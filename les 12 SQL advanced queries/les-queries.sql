@@ -68,3 +68,11 @@ JOIN artikel a ON a.artnr = ba.artnr
 WHERE k.naam = 'Groot'
 GROUP BY k.naam, a.naam
 ;
+
+
+
+SELECT a.naam, count(a2.adviesprijs)
+FROM artikel a
+INNER JOIN artikel a2 ON a.adviesprijs < a2.adviesprijs
+WHERE a.naam = 'post-its'
+GROUP BY a.naam;
