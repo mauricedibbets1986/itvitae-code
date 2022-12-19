@@ -76,3 +76,23 @@ FROM artikel a
 INNER JOIN artikel a2 ON a.adviesprijs < a2.adviesprijs
 WHERE a.naam = 'post-its'
 GROUP BY a.naam;
+
+
+DROP TABLE IF EXISTS test;
+
+CREATE TABLE test (
+	ISBN BIGINT PRIMARY KEY,
+	ISBN2 NUMERIC(13),
+	ISBN3 VARCHAR(13)
+);
+
+insert into test
+VALUES
+(9789463561143, 9789463561143, '9789463561143');
+
+SELECT * FROM test;
+
+-- Name	Storage 	Size		Range
+-- smallint			2 bytes		-32768 to +32767
+-- integer			4 bytes		-2147483648 to +2147483647
+-- bigint			8 bytes		-9223372036854775808 to +9223372036854775807
