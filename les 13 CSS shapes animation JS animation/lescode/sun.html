@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            background-color: #97D9EF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .wrapper {
+            position: relative;
+        }
+
+        .sun {
+            width: 44vh;
+            height: 44vh;
+            border-radius: 9999em;
+            background: radial-gradient(closest-side, #F7931E, #F7931E, #F7931E, transparent);
+        }
+
+        .clouds {
+            width: 12vw;
+            position: absolute;
+            right: -8vw;
+            bottom: 0;
+            height: 0;
+            opacity: 66%;
+        }
+
+        .cloud-base {
+            position: absolute;
+            width: 100%;
+            height: 8vh;
+            background: white;
+            bottom: 0;
+            left: 0;
+        }
+
+        .cloud-big {
+            position: absolute;
+            width: 22vh;
+            height: 22vh;
+            background: white;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 9999em;
+        }
+
+        .cloud-medium {
+            position: absolute;
+            width: 14vh;
+            height: 14vh;
+            background: white;
+            bottom: 0;
+            left: -7vh;
+            border-radius: 9999em;
+        }
+
+        .cloud-small {
+            position: absolute;
+            width: 12vh;
+            height: 12vh;
+            background: white;
+            bottom: 0;
+            right: -6vh;
+            border-radius: 9999em;
+        }
+
+        .birds {
+            position: absolute;
+            bottom: 12vh;
+        }
+
+        .bird {
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            rotate: 45deg;
+            box-shadow: 4px 4px black;
+        }
+
+        .bird--2 {
+            position: absolute;
+            top: -80px;
+            right: -60px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sun"></div>
+        <div class="clouds">
+            <div class="cloud-base"></div>
+            <div class="cloud-big"></div>
+            <div class="cloud-medium"></div>
+            <div class="cloud-small"></div>
+        </div>
+        <div class="birds">
+            <div class="bird"></div>
+            <div class="bird bird--2"></div>
+        </div>
+    </div>
+</body>
+
+</html>
