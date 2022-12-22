@@ -2,3 +2,23 @@
 @use 'basic' as *;
 @use 'text' as *;
 
+// oefenblok
+.oefenblok {
+    width: 400px;
+    height: 400px;
+    border: 4px solid $dark-color;
+}
+.oefenshape {
+    width: 140px;
+    height: 140px;
+    border-radius: 9999em;
+    background-color: transparent;
+    box-shadow: 10px 10px $base-color;
+}
+
+.grid {
+
+    .grid__item {
+        
+    }
+}
