@@ -78,4 +78,129 @@ h2 {
 .grid .grid__item .grid__shape-wrapper .grid__shape--square {
   width: 160px;
   height: 160px;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--rectangle {
+  width: 240px;
+  height: 120px;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 9999em;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--oval {
+  width: 240px;
+  height: 120px;
+  border-radius: 50%;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--triangle {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 160px solid #792CFF;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--triangle-right {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-bottom: 80px solid transparent;
+  border-top: 80px solid transparent;
+  border-left: 160px solid #792CFF;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--trapezoid {
+  border-bottom: 120px solid #792CFF;
+  width: 180px;
+  height: 0;
+  background-color: transparent;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--parallelogram {
+  width: 160px;
+  height: 120px;
+  transform: skewXz(20deg);
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--star {
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 132px solid #792CFF;
+  position: relative;
+  background-color: transparent;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--star::after {
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-top: 132px solid #792CFF;
+  position: absolute;
+  content: "";
+  top: 40px;
+  left: -80px;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--pentagon {
+  position: relative;
+  width: 108px;
+  box-sizing: content-box;
+  border-width: 100px 36px 0;
+  border-style: solid;
+  border-color: #792CFF transparent;
+  background-color: transparent;
+  top: 36px;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--pentagon::before {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -170px;
+  left: -36px;
+  border-width: 0 90px 70px;
+  border-style: solid;
+  border-color: transparent transparent #792CFF;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  background-color: transparent;
+  top: -45px;
+  left: -50px;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--heart::before, .grid .grid__item .grid__shape-wrapper .grid__shape--heart::after {
+  position: absolute;
+  content: "";
+  left: 100px;
+  top: 0;
+  width: 100px;
+  height: 160px;
+  background: #792CFF;
+  border-radius: 100px 100px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--heart::before {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--egg {
+  width: 126px;
+  height: 180px;
+  background-color: #792CFF;
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+}
+.grid .grid__item .grid__shape-wrapper .grid__shape--moon {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  box-shadow: 30px 30px 0 0 #792CFF;
+  background-color: transparent;
+  top: -40px;
+  left: -40px;
 }/*# sourceMappingURL=style.css.map */
