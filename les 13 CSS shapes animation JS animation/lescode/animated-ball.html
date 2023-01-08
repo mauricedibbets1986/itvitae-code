@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            border: 0;
+        }
+
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            background-color: #eafc7e;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ball {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #ed4a18;
+            animation: ballch 1.2s infinite;
+        }
+
+        .shadow {
+            position: absolute;
+            width: 200px;
+            height: 20px;
+            bottom: 40px;
+            border-radius: 50%;
+            background-color: black;
+            animation: shadowch 1.2s infinite;
+        }
+
+        @keyframes ballch {
+            0% {
+                bottom: calc(100% - 260px);
+                left:-10%; 
+                /* animation-timing-function: ease-in; */
+            }
+            32% {
+                bottom: 60px;
+                left: calc(50% - 100px);
+                bottom: 60px;
+            }
+            38% { 
+                height: 120px;
+                width: 280px;
+                bottom: 60px;
+            }
+            40% {
+                height: 190px;
+                width: 260px;
+            }
+
+            /* 46% {
+                height: 200px;
+                width: 200px;
+                bottom: 22%;
+            } */
+
+            100% {
+                bottom: calc(100% - 260px);
+                left: 110%; 
+                /* animation-timing-function: ease-in; */
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @keyframes shadowch {
+            0% {
+                left:-10%; 
+            } 
+            100% {
+                left:110%; 
+            }        
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ball"></div>
+        <div class="shadow"></div>
+    </div>
+</body>
+</html>
