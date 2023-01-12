@@ -2,47 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Header from './Header';
+import Player from './Player';
 
-const players = [
-  {
-      name: "Maurice",
-      score: 200,
-      id: 1
-  },
-  {
-      name: "Kees",
-      score: 250,
-      id: 2
-  },
-  {
-      name: "Piet",
-      score: 100,
-      id: 3
+
+class App extends React.Component {
+  state = {
+    players: [
+      {
+        name: "Maurice",
+        score: 0,
+        id: 1
+      },
+      {
+        name: "Kees",
+        score: 0,
+        id: 2
+      }
+    ]
   }
-];
-
-const Player = (props) => {
-  return (
-      <div className="player">
-          <span className="player-name">{props.name}</span>
-          <Counter />
-      </div>
-  )
-}
-
-// const Counter = (props) => {
-//     return (
-//         <div className="counter">
-//             <button className="counter-action decrement"> - </button>
-//             <span className="counter-score">{props.score}</span>
-//             <button className="counter-action increment"> + </button>
-//         </div>
-//     )
-// }
-
-
-const App = () => {
-  return (
+  
+  render() {
+    return (
       <div className="scoreboard">
           <Header title="Scoreboard" totalPlayers={players.length}/>
 
@@ -54,7 +34,9 @@ const App = () => {
               />
           )}
       </div>
-  )
+    )
+  }
+
 }
 
 export default App;
