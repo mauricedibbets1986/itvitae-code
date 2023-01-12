@@ -23,8 +23,8 @@ class App extends React.Component {
 
   decrementScore() {
     console.log("hoi vanuit decrement score");
-    
-  }
+
+  };
   
   render() {
     return (
@@ -37,6 +37,7 @@ class App extends React.Component {
                 name = {player.name}
                 key = {player.id.toString()}
                 score = {player.score}
+                decrementScore={this.decrementScore}
               />
           )}
       </div>
