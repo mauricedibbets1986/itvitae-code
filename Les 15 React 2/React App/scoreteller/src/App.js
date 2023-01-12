@@ -21,10 +21,10 @@ class App extends React.Component {
     ]
   };
 
-  decrementScore() {
-    console.log("hoi vanuit decrement score");
-
-  };
+  handleScoreChange = (index, delta) => {
+    console.log('index: ' + index, 'delta ' + delta);
+    
+  }
   
   render() {
     return (
@@ -32,12 +32,13 @@ class App extends React.Component {
           <Header title="Scoreboard" totalPlayers={this.state.players.length}/>
 
           {/* Player list */}
-          {this.state.players.map(player => 
+          {this.state.players.map((player, index) => 
               <Player
                 name = {player.name}
                 key = {player.id.toString()}
                 score = {player.score}
-                decrementScore={this.decrementScore}
+                changeScore={this.handleScoreChange}
+                index={index}
               />
           )}
       </div>
