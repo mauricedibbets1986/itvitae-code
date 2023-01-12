@@ -10,32 +10,38 @@ class App extends React.Component {
     players: [
       {
         name: "Maurice",
-        score: 0,
+        score: 1,
         id: 1
       },
       {
         name: "Kees",
-        score: 0,
+        score: 5,
         id: 2
       }
     ]
+  };
+
+  decrementScore() {
+    console.log("hoi vanuit decrement score");
+    
   }
   
   render() {
     return (
       <div className="scoreboard">
-          <Header title="Scoreboard" totalPlayers={players.length}/>
+          <Header title="Scoreboard" totalPlayers={this.state.players.length}/>
 
           {/* Player list */}
-          {players.map(player => 
+          {this.state.players.map(player => 
               <Player
-              name={player.name}
-              key ={player.id.toString()}
+                name = {player.name}
+                key = {player.id.toString()}
+                score = {player.score}
               />
           )}
       </div>
     )
-  }
+  };
 
 }
 
