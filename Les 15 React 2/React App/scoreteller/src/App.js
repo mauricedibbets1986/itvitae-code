@@ -23,7 +23,10 @@ class App extends React.Component {
 
   handleScoreChange = (index, delta) => {
     console.log('index: ' + index, 'delta ' + delta);
-    
+    this.setState(prevState => ({
+        score: prevState.players[index].score += delta
+
+    }))
   }
   
   render() {
