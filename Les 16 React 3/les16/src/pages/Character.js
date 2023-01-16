@@ -12,10 +12,17 @@ class Character extends React.Component {
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
+            this.setState({ character: data })
         })
         .catch((error) => {
             console.error(error);
         })
+    }
+
+    render() {
+        return (
+            <h1>{this.state.character.name}</h1>
+        )
     }
 }
 
