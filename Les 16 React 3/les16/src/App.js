@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Characters from './pages/Characters';
+import Character from './pages/Character';
 
 import logo from './logo.svg';
 import './App.css';
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}/> {/*mag ook JSX zijn bv een h1*/}
         <Route path="/characters" element={<Characters />} />
+        <Route path='/character/:id' element={<Character />} />
       </Routes>
     </>
   );
