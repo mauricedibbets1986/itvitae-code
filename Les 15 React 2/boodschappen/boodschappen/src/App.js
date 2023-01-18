@@ -11,7 +11,7 @@ import Item from './Item';
 class App extends React.Component {
 
   state = {
-    items: []
+    boodschappenlijst: []
   }
 
   addItem = () => {
@@ -20,21 +20,50 @@ class App extends React.Component {
     }))
   }
 
+  removeItem = (id) => {
+    this.setState(prevState => {
+      return {
+        players: prevState.players.filter(p => p.id !== id)
+      };
+    })
+  }
+
+  changeItem = (id) => {
+
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/boodschappen.json')
+      .then((response) => 
+        response.json()
+      )
+      .then((data) => {
+        console.log(data)
+        this.setState({ items: data })
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+  }
+
   render() {
     return (
       <div>
-          <Header title="Kopen:" totalPlayers={this.state.items.length}/>
-          <div>
-            <Add />
-            <div>
-              <Item name = "test"/>
-            </div>
-          </div>
+        <Add addItem={this.addItem} />
+        <div>
+          {this.state.boodschappenlijst.map((bitem, index) =>
+            <Item
+              name={bitem.name}
+              key={bitem.id.toString()}
+              deleteItem={this.deleteItem}
+              changeItem={this.changeItem}
+              index={index}
+            />
+          )}
+        </div>
       </div>
     );
   }
-
-
 }
 
 export default App;
