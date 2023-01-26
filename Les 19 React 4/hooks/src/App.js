@@ -9,34 +9,33 @@ function App() {
   const [starwars, setStarwars] = useState([]);
 
   useEffect(() => {
-    fetch(`https://swapi.dev/api/${resourceType}`)
-      .then(response => response.json())
-      .then(json => {
-        console.log(json);
-        setStarwars(json.results);
-      })
-  }, [resourceType])
+   fetch(`https://swapi.dev/api/${resourceType}/`)
+    .then(response => response.json())
+    .then(json => {
+      console.log(json);
+      setStarwars(json.results);
+    })
+  }, [resourceType]);
 
   return (
     <>
-      <header>
-        <h1>How many?</h1>
-        <Counter />
-      </header>
+    <header>
+      <h1>How many?</h1>
+      <Counter />
+    </header>
 
-      <main>
-        <section>
-          <button onClick={() => setResourceType('people')}>People</button>
-          <button onClick={() => setResourceType('planets')}>Planets</button>
-          <h1>Starwars {resourceType}</h1>
-          {starwars.map(item => {
-            return <h3>{item.name}</h3>
-          })}
-        </section>
-      </main>
+    <main>
+      <section>
+        <button onClick={() => setResourceType('people')}>People</button>
+        <button onClick={() => setResourceType('planets')}>Planets</button>
+        <h2>Starwars {resourceType}</h2>
+        {starwars.map(item => 
+          <h3>{item.name}</h3>
+        )}
+      </section>
+    </main>
     </>
-
-  );
+  )
 }
 
 export default App;
